@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Siddhi Laides Tailoring &amp; Boutique</title>
+<meta name="description" content="Custom stitching, alterations, bridal blouses and saree work. Book a fitting today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F5EBDC;
+    --ivory-dim:#EFE1CD;
+    --maroon:#7A1F35;
+    --maroon-deep:#5A1526;
+    --marigold:#D89B33;
+    --teal:#1D4E4A;
+    --charcoal:#2B211D;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Karla', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    color:var(--maroon-deep);
+    line-height:1.15;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Karla', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:12px;
+    font-weight:700;
+    color:var(--teal);
+  }
+
+  /* ---------- Stitch line signature ---------- */
+  .stitch-divider{width:100%; height:24px; display:block;}
+  .stitch-divider path{
+    fill:none; stroke:var(--marigold); stroke-width:2.5;
+    stroke-dasharray:10 8; stroke-linecap:round;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,235,220,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(122,31,53,0.15);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1120px; margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px; font-weight:700; color:var(--maroon-deep);
+  }
+  .brand svg{width:28px; height:28px; flex-shrink:0;}
+  .nav-links{display:flex; gap:32px; align-items:center;}
+  .nav-links a{
+    font-size:14px; font-weight:600; letter-spacing:0.02em; color:var(--charcoal);
+    position:relative; padding:4px 0;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px;
+    width:0; height:2px; background:var(--marigold);
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after{width:100%;}
+  .nav-cta{
+    background:var(--maroon); color:var(--ivory) !important;
+    padding:10px 20px; border-radius:var(--radius); font-weight:700 !important;
+  }
+  .nav-cta::after{display:none;}
+  .nav-cta:hover{background:var(--maroon-deep);}
+  .menu-btn{
+    display:none; background:none; border:none; cursor:pointer;
+    width:36px; height:36px; flex-direction:column; justify-content:center; gap:5px;
+  }
+  .menu-btn span{display:block; height:2px; background:var(--maroon-deep); border-radius:2px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:72px 24px 0;}
+  .hero-inner{
+    max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+    padding-bottom:64px;
+  }
+  .hero .eyebrow{display:block; margin-bottom:18px;}
+  .hero h1{font-size:clamp(38px, 5.2vw, 64px); margin-bottom:20px;}
+  .hero h1 em{font-style:normal; color:var(--marigold);}
+  .hero p.lede{max-width:460px; margin-bottom:32px; font-size:17px; color:#4a3a34;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 30px; font-weight:700; font-size:14px;
+    letter-spacing:0.02em; border-radius:var(--radius); border:1.5px solid var(--maroon);
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .btn-solid{background:var(--maroon); color:var(--ivory);}
+  .btn-solid:hover{background:var(--maroon-deep); transform:translateY(-2px);}
+  .btn-outline{background:transparent; color:var(--maroon);}
+  .btn-outline:hover{background:var(--maroon); color:var(--ivory); transform:translateY(-2px);}
+
+  .hero-media{position:relative;}
+  .hero-media .frame{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    aspect-ratio:4/5; border:1px solid rgba(122,31,53,0.2);
+  }
+  .hero-media img{width:100%; height:100%; object-fit:cover;}
+  .hero-badge{
+    position:absolute; left:-18px; bottom:-18px;
+    background:var(--marigold); color:var(--maroon-deep);
+    padding:16px 20px; max-width:190px; border-radius:var(--radius);
+    font-family:'Cormorant Garamond', serif; font-weight:700; font-size:15px;
+    box-shadow:0 12px 28px rgba(90,21,38,0.25);
+  }
+
+  .stitch-path-wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:80px 24px;}
+  .section-head{max-width:600px; margin:0 auto 52px; text-align:center;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); margin-top:10px;}
+  .section-head p{color:#5a4a43; margin-top:14px; font-size:16px;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--ivory-dim);}
+  .service-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:rgba(122,31,53,0.18); border:1px solid rgba(122,31,53,0.18);
+    max-width:1120px; margin:0 auto;
+  }
+  .service-card{background:var(--ivory-dim); transition:background 0.25s ease;}
+  .service-card:hover{background:var(--ivory);}
+  .service-thumb{width:100%; aspect-ratio:16/10; overflow:hidden;}
+  .service-thumb img{width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;}
+  .service-card:hover .service-thumb img{transform:scale(1.06);}
+  .service-body{padding:28px 30px 34px;}
+  .service-num{
+    font-family:'Cormorant Garamond', serif; font-size:14px; font-weight:700;
+    color:var(--marigold); letter-spacing:0.1em;
+  }
+  .service-card h3{font-size:24px; margin:10px 0 10px;}
+  .service-card p{font-size:14.5px; color:#5a4a43;}
+
+  /* ---------- Measurement band ---------- */
+  .measure-band{position:relative; color:var(--ivory); overflow:hidden;}
+  .measure-band .bg-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .measure-band .bg-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(120deg, rgba(29,78,74,0.94), rgba(20,40,38,0.9));
+  }
+  .measure-inner{
+    position:relative; max-width:1120px; margin:0 auto; padding:72px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+  }
+  .measure-inner h2{color:var(--ivory); font-size:clamp(26px,3.6vw,36px); max-width:480px;}
+  .measure-inner p{opacity:0.85; max-width:420px; margin-top:12px; font-size:15px;}
+  .tape{
+    font-family:'Karla', sans-serif; font-size:13px; letter-spacing:0.14em;
+    display:flex; gap:14px; flex-wrap:wrap; opacity:0.9;
+  }
+  .tape span{border-bottom:1px dashed rgba(245,235,220,0.5); padding-bottom:4px;}
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(6, 1fr); grid-auto-rows:120px; gap:14px;
+    max-width:1120px; margin:0 auto;
+  }
+  .gallery-item{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    grid-column:span 3; grid-row:span 2;
+  }
+  .gallery-item.tall{grid-row:span 3;}
+  .gallery-item:nth-child(1){grid-column:span 4;}
+  .gallery-item:nth-child(2){grid-column:span 2; grid-row:span 3;}
+  .gallery-item:nth-child(3){grid-column:span 2;}
+  .gallery-item:nth-child(4){grid-column:span 2;}
+  .gallery-item:nth-child(5){grid-column:span 4; grid-row:span 2;}
+  .gallery-item:nth-child(6){grid-column:span 6; grid-row:span 2;}
+  .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;}
+  .gallery-item:hover img{transform:scale(1.05);}
+  .gallery-item .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 16px; font-family:'Cormorant Garamond', serif; font-size:16px; font-weight:600;
+    color:var(--ivory);
+    background:linear-gradient(to top, rgba(42,35,32,0.75), transparent);
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--ivory-dim);}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1120px; margin:0 auto;}
+  .testi-card{background:var(--ivory); border:1px solid rgba(122,31,53,0.15); padding:30px; border-radius:var(--radius);}
+  .testi-card p.quote{font-size:16px; color:#4a3a34; margin-bottom:18px;}
+  .testi-card .who{font-weight:700; font-size:14px; color:var(--maroon-deep);}
+  .testi-card .role{font-size:12.5px; color:#8a7a72;}
+
+  /* ---------- Contact ---------- */
+  .contact-wrap{
+    max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;
+  }
+  .contact-info h2{font-size:clamp(28px,4vw,40px); margin-bottom:16px;}
+  .contact-info p{color:#5a4a43; margin-bottom:26px;}
+  .contact-list{list-style:none; display:flex; flex-direction:column; gap:14px;}
+  .contact-list li{font-size:15px; display:flex; gap:10px;}
+  .contact-list strong{color:var(--maroon-deep); min-width:88px; display:inline-block;}
+  form{display:flex; flex-direction:column; gap:16px;}
+  label{font-size:13px; font-weight:700; letter-spacing:0.02em; color:var(--maroon-deep); margin-bottom:6px; display:block;}
+  input, select, textarea{
+    width:100%; padding:12px 14px; font-family:'Karla', sans-serif; font-size:14.5px;
+    border:1.5px solid rgba(122,31,53,0.3); border-radius:var(--radius);
+    background:var(--ivory); color:var(--charcoal);
+  }
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--teal);}
+  textarea{resize:vertical; min-height:90px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .form-note{font-size:12.5px; color:#8a7a72; margin-top:-6px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--maroon-deep); color:rgba(245,235,220,0.85); padding:48px 24px 28px;}
+  .footer-inner{
+    max-width:1120px; margin:0 auto; display:flex; justify-content:space-between;
+    align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  .footer-inner .brand{color:var(--ivory);}
+  .footer-links{display:flex; gap:24px; font-size:13.5px;}
+  footer .bottom{
+    max-width:1120px; margin:28px auto 0; padding-top:20px;
+    border-top:1px solid rgba(245,235,220,0.15); font-size:12.5px; opacity:0.7;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .hero-inner{grid-template-columns:1fr; text-align:center;}
+    .hero p.lede{margin-left:auto; margin-right:auto;}
+    .hero-ctas{justify-content:center;}
+    .hero-media{max-width:420px; margin:0 auto;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:160px;}
+    .gallery-item, .gallery-item:nth-child(n){grid-column:span 1; grid-row:span 1;}
+    .testi-grid{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width: 640px){
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0; background:var(--ivory);
+      border-bottom:1px solid rgba(122,31,53,0.15); flex-direction:column;
+      align-items:flex-start; gap:0; max-height:0; overflow:hidden; transition:max-height 0.3s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{width:100%; padding:16px 24px; border-bottom:1px solid rgba(122,31,53,0.08);}
+    .nav-links a::after{display:none;}
+    .nav-cta{margin:12px 24px;}
+    .menu-btn{display:flex;}
+    .service-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 12c2-4 6-6 8-4s0 6-2 8-6 2-8-2" stroke="#7A1F35" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="18" cy="6" r="2" stroke="#D89B33" stroke-width="1.6"/>
+      </svg>
+      Sri Siddhi Ladies Tailoring
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#testimonials">Reviews in Google</a>
+      <a href="#contact" class="nav-cta">Book a Fitting</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Custom stitching &amp; alterations, made to your measure</span>
+        <h1>Clothes that fit<br><em>you</em>, not the rack</h1>
+        <p class="lede">Sri Siddhi Ladies Tailoring is a ladies tailoring studio for designer blouses, sarees, bridal wear and everyday alterations — cut, fitted and finished by hand.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-solid">Book a fitting</a>
+          <a href="#gallery" class="btn btn-outline">See our recent work</a>
+        </div>
+      </div>
+      <div class="hero-media reveal in">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1727430228383-aa1fb59db8bf?auto=format&fit=crop&w=900&q=80" alt="Woman elegantly draped in a traditional Indian saree">
+        </div>
+        <div class="hero-badge">Every garment fitted to one person — you</div>
+      </div>
+    </div>
+    <div class="stitch-path-wrap">
+      <svg class="stitch-divider" viewBox="0 0 1120 24" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 12 H1120"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we stitch</span>
+      <h2>Every piece, made to order</h2>
+      <p>From a quick alteration to a full bridal ensemble, each order is cut and fitted for one person — you.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=700&q=80" alt="Woman wearing an emerald green silk saree with gold jewellery"></div>
+        <div class="service-body">
+          <div class="service-num">01</div>
+          <h3>Blouse Stitching</h3>
+          <p>Custom-fit blouses in any design — princess cut, boat neck, backless, high neck — stitched to your measurements.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1717585679395-bbe39b5fb6bc?auto=format&fit=crop&w=700&q=80" alt="Folded stack of colourful silk saree fabrics"></div>
+        <div class="service-body">
+          <div class="service-num">02</div>
+          <h3>Saree Services</h3>
+          <p>Fall &amp; pico, pre-pleating, fancy draping stitches, and saree repairs done neatly and quickly.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1716698286313-9a2349d41110?auto=format&fit=crop&w=700&q=80" alt="Tape measure held in hand"></div>
+        <div class="service-body">
+          <div class="service-num">03</div>
+          <h3>Alterations</h3>
+          <p>Resizing, hemming, zip repair and refitting for kurtis, dresses, trousers and more — same-week turnaround.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1654764746225-e63f5e90facd?auto=format&fit=crop&w=700&q=80" alt="Bride in a red and gold Indian bridal outfit"></div>
+        <div class="service-body">
+          <div class="service-num">04</div>
+          <h3>Bridal &amp; Party Wear</h3>
+          <p>Lehengas, gowns and party blouses with hand embroidery, lining and boning built in for the day it matters.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1613076321656-23dcdd3aea92?auto=format&fit=crop&w=700&q=80" alt="Colorful spools of thread"></div>
+        <div class="service-body">
+          <div class="service-num">05</div>
+          <h3>Embroidery &amp; Embellishment</h3>
+          <p>Hand and machine embroidery, aari work, and stone or bead detailing added to any garment.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-thumb"><img src="https://images.unsplash.com/photo-1560796952-f1c9b838544c?auto=format&fit=crop&w=700&q=80" alt="Sewing machine needle close-up"></div>
+        <div class="service-body">
+          <div class="service-num">06</div>
+          <h3>Kids &amp; Uniform Wear</h3>
+          <p>School uniforms, frocks and ethnic wear for children, stitched with room to grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEASUREMENT BAND 
+  <section id="measure" class="measure-band">
+    <img class="bg-img" src="https://images.unsplash.com/photo-1716698286313-9a2349d41110?auto=format&fit=crop&w=1600&q=70" alt="">
+    <div class="bg-overlay"></div>
+    <div class="measure-inner reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--marigold);">First time here?</span>
+        <h2>We take your measurements once — and keep them on file</h2>
+        <p>Visit the studio for a 15-minute fitting, or send your measurements using the guide below. Every order after that is one message away.</p>
+      </div>
+      <div class="tape">
+        <span>Chest</span><span>Waist</span><span>Hip</span><span>Shoulder</span><span>Sleeve length</span><span>Blouse length</span>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recent work</span>
+      <h2>A few pieces from the studio</h2>
+      <p>Swap these stock photos for real photos of your own garments once you have them — see the notes below the site for how.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1585531977323-8d57bac2121b?auto=format&fit=crop&w=800&q=80" alt="Woman in a blue and gold silk saree, smiling"><span class="cap">Bridal fitting</span></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1778148046645-62d1be9d1783?auto=format&fit=crop&w=600&q=80" alt="Close-up of a woman in a saree adjusting her jewellery"><span class="cap">Aari embroidery</span></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1692992193981-d3d92fabd9cb?auto=format&fit=crop&w=600&q=80" alt="Woman in a colourful silk saree"><span class="cap">Silk saree work</span></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1613076321656-23dcdd3aea92?auto=format&fit=crop&w=600&q=80" alt="Colorful thread spools"><span class="cap">Thread &amp; trims</span></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1560796952-f1c9b838544c?auto=format&fit=crop&w=800&q=80" alt="Sewing machine needle close-up"><span class="cap">On the machine</span></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1716698286313-9a2349d41110?auto=format&fit=crop&w=1200&q=80" alt="Tape measure in hand"><span class="cap">Fitting &amp; measurements</span></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kind words</span>
+      <h2>From our customers</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="quote">"The stitching was perfect and fitting was exactly hiw I wanted. Very professional and delivered on time. Highly recommended for anyone looking for elegant and well-fitted outfits"</p>
+        <div class="who">Mary G.</div>
+        
+      </div>
+      <div class="testi-card reveal">
+        <p class="quote">"The blouse stitching was neat, fitting was perfect, and the finishing looked very premium. Really loved the tailoring quality"</p>
+        <div class="who">Susmita</div>
+        
+      </div>
+      <div class="testi-card reveal">
+        <p class="quote">"The service was too good. Stitched exactly as per the measurements and delivered within the time"</p>
+        <div class="who">Sivani D.</div>
+        
+      </div>
+      
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Book your fitting</h2>
+        <p>Fill in the form or reach out directly.</p>
+        <ul class="contact-list">
+          <li><strong>Location</strong> Nallagandla, Hyderabad</li>
+          <li><strong>Hours</strong> Mon–Sun, 8am – 10pm</li>
+          <li><strong>Phone</strong> +91 8179047913</li>
+          <li><strong>Email</strong> srisiddhiladiestailoring@gmail.com</li>
+        </ul>
+      </div>
+      <form class="reveal" id="bookingForm">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div>
+            <label for="service">Service needed</label>
+            <select id="service" name="service">
+              <option>Normal Blouse stitching</option>
+              <option>Customised Designer Blouse stitching</option>
+              <option>Saree fall &amp; pico</option>
+              <option>Alterations</option>
+              <option>Bridal &amp; party wear</option>
+              <option>Computer Embroidery</option>
+              
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="message">Tell us more</label>
+          <textarea id="message" name="message" placeholder="Garment type, fabric, reference photo link, preferred date..."></textarea>
+        </div>
+        <p class="form-note">This form opens WhatsApp with your details filled in, sent straight to us — no backend needed.</p>
+        <button type="submit" class="btn btn-solid" style="cursor:pointer;">Send via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="brand">Sri Siddhi Ladies Tailoring</span>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="bottom wrap">© <span id="year"></span> Sri Siddhi Ladies Tailoring. All rights reserved.</div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+
+    // Business WhatsApp number (Sri Siddhi Ladies Tailoring), in international format, no + or spaces
+    const businessWhatsApp = '918179047913';
+
+    const waText = encodeURIComponent(
+      `New booking request — Sri Siddhi Ladies Tailoring\n\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Service: ${service}\n` +
+      `Details: ${message || '—'}`
+    );
+
+    // Opens WhatsApp (app on mobile, WhatsApp Web on desktop) with the message pre-filled,
+    // addressed to the studio's WhatsApp number, ready for the customer to hit send.
+    window.open(`https://wa.me/${businessWhatsApp}?text=${waText}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
