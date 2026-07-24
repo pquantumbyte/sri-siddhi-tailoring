@@ -1,482 +1,939 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Sri Siddhi Ladies Tailoring</title>
-<meta name="description" content="A full gallery of our bespoke tailoring, bridal wear, and custom embroidery work.">
-<link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ivory:#FBF6ED;
-    --ivory-deep:#F3E8D6;
-    --maroon:#7A1836;
-    --maroon-deep:#5A1128;
-    --gold:#C79A3E;
-    --gold-light:#E4C878;
-    --teal:#1E5C4E;
-    --ink:#2A211C;
-    --ink-soft:#5c4f45;
-    --blush:#F2D9C4;
-    --white:#FFFFFF;
-    --shadow: 0 12px 40px -12px rgba(122,24,54,0.18);
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Sri Siddhi Ladies Tailoring</title>
+    <meta
+      name="description"
+      content="A full gallery of our bespoke tailoring, bridal wear, and custom embroidery work."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ivory: #fbf6ed;
+        --ivory-deep: #f3e8d6;
+        --maroon: #7a1836;
+        --maroon-deep: #5a1128;
+        --gold: #c79a3e;
+        --gold-light: #e4c878;
+        --teal: #1e5c4e;
+        --ink: #2a211c;
+        --ink-soft: #5c4f45;
+        --blush: #f2d9c4;
+        --white: #ffffff;
+        --shadow: 0 12px 40px -12px rgba(122, 24, 54, 0.18);
+      }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--ivory);
-    color:var(--ink);
-    font-family:'Poppins',sans-serif;
-    font-weight:400;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;margin:0;color:var(--maroon-deep);letter-spacing:.01em;}
-  p{margin:0;}
-  a{color:inherit;text-decoration:none;}
-  ul{list-style:none;margin:0;padding:0;}
-  img{max-width:100%;display:block;}
-  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ivory);
+        color: var(--ink);
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        margin: 0;
+        color: var(--maroon-deep);
+        letter-spacing: 0.01em;
+      }
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
 
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
-  .eyebrow{font-family:'Poppins',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .eyebrow {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--teal);
+        font-weight: 600;
+      }
 
-  /* Header */
-  header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(251,246,237,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(122,24,54,0.08);transition:box-shadow .3s ease;}
-  header.scrolled{box-shadow:0 4px 24px -8px rgba(42,33,28,0.12);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1180px;margin:0 auto;}
-  .brand{display:flex;align-items:center;gap:12px;z-index:1002;}
-  
-  /* Logo Image Styles */
-  .brand-logo-img {
-    width: 48px; 
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(122,24,54,0.25);
-    flex-shrink: 0;
-    border: 1px solid var(--gold);
-  }
-  
-  .brand-text{line-height:1.1;}
-  .brand-text .name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;color:var(--maroon-deep);}
-  .brand-text .tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);}
-  
-  .nav-links{display:flex;gap:30px;align-items:center;}
-  .nav-links a{font-size:.88rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0;}
-  .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .28s ease;}
-  .nav-links a:hover::after{width:100%;}
-  
-  .nav-cta{
-    display: inline-flex;align-items: center;background:var(--maroon);color:var(--ivory)!important;
-    padding: 11px 32px !important; border-radius: 50px; font-weight:600;font-size:.88rem!important; 
-    line-height: 1.2;box-shadow: 0 6px 18px -6px rgba(122,24,54,0.5);transition: background .25s ease, transform .25s ease;
-  }
-  .nav-cta::after{display:none;}
-  .nav-cta:hover{background:var(--maroon-deep);transform:translateY(-1px);}
-  
-  .menu-btn{display:none;background:none;border:none;flex-direction:column;gap:5px;padding:6px;z-index:1002;}
-  .menu-btn span{width:24px;height:2px;background:var(--maroon-deep);display:block;transition:all .3s ease;}
-  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .menu-btn.open span:nth-child(2){opacity:0;}
-  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(251, 246, 237, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(122, 24, 54, 0.08);
+        transition: box-shadow 0.3s ease;
+      }
+      header.scrolled {
+        box-shadow: 0 4px 24px -8px rgba(42, 33, 28, 0.12);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 28px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 1002;
+      }
 
-  /* Gallery Page Specifics */
-  .page-header { padding: 160px 0 60px; text-align: center; background: var(--white); border-bottom: 1px solid rgba(122,24,54,0.08); }
-  .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-top: 12px; }
-  .page-header p { margin-top: 14px; color: var(--ink-soft); max-width: 600px; margin-left: auto; margin-right: auto; }
+      /* Logo Image Styles */
+      .brand-logo-img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(122, 24, 54, 0.25);
+        flex-shrink: 0;
+        border: 1px solid var(--gold);
+      }
 
-  /* Masonry Grid Layout */
-  .masonry-section { padding: 64px 0; background: var(--ivory); }
-  .masonry-grid {
-    column-count: 4; 
-    column-gap: 16px;
-  }
-  .masonry-item {
-    break-inside: avoid; 
-    margin-bottom: 16px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px -10px rgba(42,33,28,0.15);
-    position: relative;
-    background: var(--ivory-deep);
-    display: none; /* Hidden by default for Load More functionality */
-  }
-  .masonry-item img {
-    width: 100%;
-    display: block;
-    transition: transform .4s ease;
-    cursor: pointer; /* Lets users know they can click */
-  }
-  .masonry-item:hover img {
-    transform: scale(1.05);
-  }
+      .brand-text {
+        line-height: 1.1;
+      }
+      .brand-text .name {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--maroon-deep);
+      }
+      .brand-text .tag {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
 
-  /* Centering container for buttons */
-  .gallery-actions { text-align: center; margin-top: 48px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
-  
-  .btn-secondary{
-    border:1.5px solid var(--maroon-deep);color:var(--maroon-deep);padding:14px 28px;
-    border-radius:30px;font-weight:600;font-size:.92rem;transition:background .25s ease, color .25s ease;
-    display:inline-flex;align-items:center;gap:8px;
-  }
-  .btn-secondary:hover{background:var(--maroon-deep);color:var(--ivory);}
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+      .nav-links a {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--ink);
+        position: relative;
+        padding: 4px 0;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold);
+        transition: width 0.28s ease;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
 
-  /* ==========================================
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        background: var(--maroon);
+        color: var(--ivory) !important;
+        padding: 11px 32px !important;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.88rem !important;
+        line-height: 1.2;
+        box-shadow: 0 6px 18px -6px rgba(122, 24, 54, 0.5);
+        transition:
+          background 0.25s ease,
+          transform 0.25s ease;
+      }
+      .nav-cta::after {
+        display: none;
+      }
+      .nav-cta:hover {
+        background: var(--maroon-deep);
+        transform: translateY(-1px);
+      }
+
+      .menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 6px;
+        z-index: 1002;
+      }
+      .menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: var(--maroon-deep);
+        display: block;
+        transition: all 0.3s ease;
+      }
+      .menu-btn.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .menu-btn.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-btn.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* Gallery Page Specifics */
+      .page-header {
+        padding: 160px 0 60px;
+        text-align: center;
+        background: var(--white);
+        border-bottom: 1px solid rgba(122, 24, 54, 0.08);
+      }
+      .page-header h1 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        margin-top: 12px;
+      }
+      .page-header p {
+        margin-top: 14px;
+        color: var(--ink-soft);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Masonry Grid Layout */
+      .masonry-section {
+        padding: 64px 0;
+        background: var(--ivory);
+      }
+      .masonry-grid {
+        column-count: 4;
+        column-gap: 16px;
+      }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px -10px rgba(42, 33, 28, 0.15);
+        position: relative;
+        background: var(--ivory-deep);
+        display: none; /* Hidden by default for Load More functionality */
+      }
+      .masonry-item img {
+        width: 100%;
+        display: block;
+        transition: transform 0.4s ease;
+        cursor: pointer; /* Lets users know they can click */
+      }
+      .masonry-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Centering container for buttons */
+      .gallery-actions {
+        text-align: center;
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .btn-secondary {
+        border: 1.5px solid var(--maroon-deep);
+        color: var(--maroon-deep);
+        padding: 14px 28px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-secondary:hover {
+        background: var(--maroon-deep);
+        color: var(--ivory);
+      }
+
+      /* ==========================================
      LIGHTBOX / ZOOM VIEW STYLES
      ========================================== */
-  .lightbox-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.92);
-    z-index: 2000; /* Sits above the header and whatsapp button */
-    display: none; /* Hidden by default */
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .lightbox-overlay.active {
-    display: flex;
-    opacity: 1;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 20px; right: 30px;
-    color: #fff; font-size: 40px;
-    font-weight: 300; cursor: pointer;
-    z-index: 2001; line-height: 1;
-    transition: transform 0.2s;
-  }
-  .lightbox-close:hover { transform: rotate(90deg); }
-  
-  .lightbox-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .lightbox-content img {
-    max-width: 90vw;
-    max-height: 70vh; /* Keeps image within view so buttons are accessible */
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-  .lightbox-download {
-    margin-top: 20px;
-    background: var(--maroon-deep);
-    color: var(--ivory);
-    border-color: var(--maroon-deep);
-  }
-  .lightbox-download:hover {
-    background: var(--maroon);
-    color: var(--ivory);
-  }
+      .lightbox-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.92);
+        z-index: 2000; /* Sits above the header and whatsapp button */
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .lightbox-overlay.active {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: 300;
+        cursor: pointer;
+        z-index: 2001;
+        line-height: 1;
+        transition: transform 0.2s;
+      }
+      .lightbox-close:hover {
+        transform: rotate(90deg);
+      }
 
-  /* Footer */
-  footer{background:var(--ink);color:rgba(251,246,237,0.75);padding:52px 0 26px;}
-  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;margin-bottom:36px;}
-  .footer-brand .name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--ivory);font-weight:700;}
-  .footer-brand p{margin-top:12px;font-size:.86rem;max-width:34ch;color:rgba(251,246,237,0.6);}
-  footer h5{color:var(--ivory);font-family:'Poppins',sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;font-weight:600;}
-  footer ul li{margin-bottom:10px;font-size:.86rem;}
-  footer ul li a:hover{color:var(--gold-light);}
-  .footer-bottom{border-top:1px solid rgba(251,246,237,0.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(251,246,237,0.5);}
+      .lightbox-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .lightbox-content img {
+        max-width: 90vw;
+        max-height: 70vh; /* Keeps image within view so buttons are accessible */
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .lightbox-download {
+        margin-top: 20px;
+        background: var(--maroon-deep);
+        color: var(--ivory);
+        border-color: var(--maroon-deep);
+      }
+      .lightbox-download:hover {
+        background: var(--maroon);
+        color: var(--ivory);
+      }
 
-  /* WhatsApp float button */
-  .wa-float{position:fixed;bottom:20px;right:20px;z-index:900;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(37,211,102,0.6);animation:pulse 2.4s infinite;}
-  .wa-float svg{width:28px;height:28px;color:#fff;}
-  @keyframes pulse{0%{box-shadow:0 8px 20px -6px rgba(37,211,102,0.6), 0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 8px 20px -6px rgba(37,211,102,0.6), 0 0 0 12px rgba(37,211,102,0);}100%{box-shadow:0 8px 20px -6px rgba(37,211,102,0.6), 0 0 0 0 rgba(37,211,102,0);}}
+      /* Footer */
+      footer {
+        background: var(--ink);
+        color: rgba(251, 246, 237, 0.75);
+        padding: 52px 0 26px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 36px;
+      }
+      .footer-brand .name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--ivory);
+        font-weight: 700;
+      }
+      .footer-brand p {
+        margin-top: 12px;
+        font-size: 0.86rem;
+        max-width: 34ch;
+        color: rgba(251, 246, 237, 0.6);
+      }
+      footer h5 {
+        color: var(--ivory);
+        font-family: "Poppins", sans-serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        font-weight: 600;
+      }
+      footer ul li {
+        margin-bottom: 10px;
+        font-size: 0.86rem;
+      }
+      footer ul li a:hover {
+        color: var(--gold-light);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(251, 246, 237, 0.12);
+        padding-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 0.78rem;
+        color: rgba(251, 246, 237, 0.5);
+      }
 
-  /* Responsive Nav */
-  @media (max-width: 1024px) {
-    .menu-btn { display: flex; }
-    .nav-links {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--ivory);
-      flex-direction: column; justify-content: center; align-items: center; padding: 80px 28px;
-      gap: 16px; transform: translateX(100%); transition: transform .35s ease; overflow-y: auto;
-      z-index: 1001; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .nav-links.open { transform: translateX(0); }
-    .nav-links li { width: 100%; text-align: center; }
-    .nav-links a { display: block; font-size: 1.35rem; font-weight: 500; padding: 12px 0; }
-    .nav-links a::after { display: none; }
-    .nav-links .nav-cta {
-      display: inline-block; margin-top: 24px; padding: 18px 56px !important; border-radius: 50px;
-      font-size: 1.1rem !important; line-height: 1.2;
-    }
-  }
+      /* WhatsApp float button */
+      .wa-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 900;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px -6px rgba(37, 211, 102, 0.6);
+        animation: pulse 2.4s infinite;
+      }
+      .wa-float svg {
+        width: 28px;
+        height: 28px;
+        color: #fff;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 0 rgba(37, 211, 102, 0.5);
+        }
+        70% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 12px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
 
-  /* Responsive Gallery Layout */
-  @media (max-width: 1024px) { .masonry-grid { column-count: 3; } }
-  @media (max-width: 768px) {
-    .masonry-grid { column-count: 2; }
-    .footer-grid{grid-template-columns:1fr;gap:32px;text-align:center;}
-    .footer-brand p{margin:12px auto 0;} footer ul{margin-top:8px;}
-    .footer-bottom{flex-direction:column;align-items:center;text-align:center;}
-  }
-  @media (max-width: 480px) { 
-    .masonry-grid { column-count: 1; } 
-    /* Mobile tweaks for lightbox */
-    .lightbox-close { top: 10px; right: 15px; font-size: 32px; }
-    .lightbox-content img { max-width: 95vw; max-height: 65vh; }
-  }
-</style>
-</head>
-<body>
+      /* Responsive Nav */
+      @media (max-width: 1024px) {
+        .menu-btn {
+          display: flex;
+        }
+        .nav-links {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: var(--ivory);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 80px 28px;
+          gap: 16px;
+          transform: translateX(100%);
+          transition: transform 0.35s ease;
+          overflow-y: auto;
+          z-index: 1001;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .nav-links.open {
+          transform: translateX(0);
+        }
+        .nav-links li {
+          width: 100%;
+          text-align: center;
+        }
+        .nav-links a {
+          display: block;
+          font-size: 1.35rem;
+          font-weight: 500;
+          padding: 12px 0;
+        }
+        .nav-links a::after {
+          display: none;
+        }
+        .nav-links .nav-cta {
+          display: inline-block;
+          margin-top: 24px;
+          padding: 18px 56px !important;
+          border-radius: 50px;
+          font-size: 1.1rem !important;
+          line-height: 1.2;
+        }
+      }
 
-<!-- ================= HEADER ================= -->
-<header id="siteHeader">
-  <nav class="nav">
-    <a href="index.html" class="brand">
-      <!-- Ganesha Logo Image -->
-      <img src="images/ganesh.png" alt="Sri Siddhi Logo" class="brand-logo-img">
-      <span class="brand-text">
-        <span class="name">Sri Siddhi</span><br>
-        <span class="tag">Ladies Tailoring</span>
-      </span>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="index.html#testimonials">Reviews</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Book a Fitting</a></li>
-    </ul>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
-
-<!-- ================= PAGE HEADER ================= -->
-<section class="page-header">
-  <div class="wrap">
-    <span class="eyebrow">Gallery</span>
-    <h1>Our Work in Detail</h1>
-    <p>A complete look at the blouses, bridal wear, and custom embroidery crafted by hand at Sri Siddhi Ladies Tailoring.</p>
-  </div>
-</section>
-
-<!-- ================= MASONRY GALLERY ================= -->
-<section class="masonry-section">
-  <div class="wrap">
-    <div class="masonry-grid" id="masonryGrid">
-      <div class="masonry-item"><img src="images/1.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/2.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/3.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/4.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/5.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/6.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/7.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/8.png" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/9.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/10.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/11.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/12.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/13.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/14.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/15.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/16.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/17.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/18.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/19.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/20.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/21.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/22.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/24.jpg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/25.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/26.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/27.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/28.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/29.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/30.jpeg" alt="Bridal Silk Blouse"></div>
-      <div class="masonry-item"><img src="images/31.jpeg" alt="Bridal Silk Blouse"></div>
-    </div>
-
-    <div class="gallery-actions">
-      <!-- Load More Button -->
-      <button id="loadMoreBtn" class="btn-secondary">
-        Load More
-        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      
-      <!-- Main CTA Button -->
-      <a href="index.html#contact" class="btn-secondary" style="background: var(--maroon-deep); color: var(--ivory); border-color: var(--maroon-deep);">
-        Book Your Fitting
-        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= LIGHTBOX ZOOM VIEW ================= -->
-<div id="lightbox" class="lightbox-overlay">
-  <span class="lightbox-close" id="lightboxClose">&times;</span>
-  <div class="lightbox-content">
-    <img id="lightboxImg" src="" alt="Zoomed Image">
-    <a id="downloadLink" class="btn-secondary lightbox-download" href="#" download>
-      <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Download Image
-    </a>
-  </div>
-</div>
-
-<!-- WhatsApp float button -->
-<a class="wa-float" id="waFloat" href="#" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
-  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 2.667c-7.36 0-13.335 5.974-13.335 13.333 0 2.347.617 4.643 1.788 6.668L2.667 29.333l6.791-1.784a13.272 13.272 0 006.543 1.7h.005c7.356 0 13.333-5.974 13.333-13.333s-5.977-13.333-13.338-13.333zm0 24.231h-.004a11.02 11.02 0 01-5.615-1.538l-.403-.239-4.169 1.095 1.113-4.064-.262-.417a11.025 11.025 0 01-1.69-5.869c0-6.104 4.968-11.071 11.076-11.071 2.957 0 5.732 1.153 7.822 3.245a10.973 10.973 0 013.239 7.826c-.002 6.105-4.969 11.072-11.107 11.072zm6.074-8.279c-.332-.166-1.963-.969-2.268-1.079-.305-.111-.527-.166-.749.166-.221.332-.859 1.079-1.053 1.301-.194.222-.388.249-.719.083-.332-.166-1.401-.516-2.668-1.645-.985-.878-1.649-1.961-1.843-2.293-.194-.332-.021-.511.145-.676.149-.149.332-.388.498-.582.166-.194.221-.332.332-.554.111-.222.055-.416-.028-.582-.083-.166-.749-1.806-1.026-2.473-.271-.649-.546-.561-.749-.571l-.638-.011c-.222 0-.582.083-.886.416-.305.332-1.164 1.137-1.164 2.776 0 1.639 1.193 3.222 1.359 3.444.166.222 2.346 3.581 5.682 5.021.794.343 1.413.547 1.896.7.797.253 1.523.217 2.095.132.639-.095 1.963-.802 2.24-1.576.277-.774.277-1.438.194-1.576-.083-.138-.305-.222-.637-.388z"/></svg>
-</a>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="name">Sri Siddhi Ladies Tailoring</span>
-        <p>Bespoke stitching, alterations and bridal wear — cut and finished by hand in Vijayawada, serving Andhra Pradesh &amp; Telangana.</p>
-      </div>
-      <div>
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#services">Services</a></li>
+      /* Responsive Gallery Layout */
+      @media (max-width: 1024px) {
+        .masonry-grid {
+          column-count: 3;
+        }
+      }
+      @media (max-width: 768px) {
+        .masonry-grid {
+          column-count: 2;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          text-align: center;
+        }
+        .footer-brand p {
+          margin: 12px auto 0;
+        }
+        footer ul {
+          margin-top: 8px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+      @media (max-width: 480px) {
+        .masonry-grid {
+          column-count: 1;
+        }
+        /* Mobile tweaks for lightbox */
+        .lightbox-close {
+          top: 10px;
+          right: 15px;
+          font-size: 32px;
+        }
+        .lightbox-content img {
+          max-width: 95vw;
+          max-height: 65vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header id="siteHeader">
+      <nav class="nav">
+        <a href="Homepage.html" class="brand">
+          <!-- Ganesha Logo Image -->
+          <img
+            src="images/ganesh.png"
+            alt="Sri Siddhi Logo"
+            class="brand-logo-img"
+          />
+          <span class="brand-text">
+            <span class="name">Sri Siddhi</span><br />
+            <span class="tag">Ladies Tailoring</span>
+          </span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Homepage.html#about">About</a></li>
+          <li><a href="Homepage.html#services">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="index.html#testimonials">Reviews</a></li>
+          <li><a href="Homepage.html#testimonials">Reviews</a></li>
+          <li>
+            <a href="Homepage.html#contact" class="nav-cta">Book a Fitting</a>
+          </li>
         </ul>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header">
+      <div class="wrap">
+        <span class="eyebrow">Gallery</span>
+        <h1>Our Work in Detail</h1>
+        <p>
+          A complete look at the blouses, bridal wear, and custom embroidery
+          crafted by hand at Sri Siddhi Ladies Tailoring.
+        </p>
       </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li>+91 98765 43210</li>
-          <li>hello@srisiddhitailoring.in</li>
-          <li>Governorpet, Vijayawada</li>
-        </ul>
+    </section>
+
+    <!-- ================= MASONRY GALLERY ================= -->
+    <section class="masonry-section">
+      <div class="wrap">
+        <div class="masonry-grid" id="masonryGrid">
+          <div class="masonry-item">
+            <img src="images/1.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/2.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/3.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/4.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/5.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/6.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/7.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/8.png" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/9.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/10.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/11.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/12.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/13.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/14.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/15.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/16.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/17.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/18.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/19.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/20.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/21.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/22.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/24.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/25.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/26.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/27.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/28.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/29.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/30.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/31.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+        </div>
+
+        <div class="gallery-actions">
+          <!-- Load More Button -->
+          <button id="loadMoreBtn" class="btn-secondary">
+            Load More
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              width="16"
+              height="16"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 5v14M6 13l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <!-- Main CTA Button -->
+          <a
+            href="Homepage.html#contact"
+            class="btn-secondary"
+            style="
+              background: var(--maroon-deep);
+              color: var(--ivory);
+              border-color: var(--maroon-deep);
+            "
+          >
+            Book Your Fitting
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              width="16"
+              height="16"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIGHTBOX ZOOM VIEW ================= -->
+    <div id="lightbox" class="lightbox-overlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Zoomed Image" />
+        <a
+          id="downloadLink"
+          class="btn-secondary lightbox-download"
+          href="#"
+          download
+        >
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+            <path
+              d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Download Image
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span id="yr"></span> Sri Siddhi Ladies Tailoring. All rights reserved.</span>
-      <span>Crafted with care, one stitch at a time.</span>
-    </div>
-  </div>
-</footer>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  const WHATSAPP_NUMBER = "919876543210";
+    <!-- WhatsApp float button -->
+    <a
+      class="wa-float"
+      id="waFloat"
+      href="#"
+      aria-label="Chat on WhatsApp"
+      target="_blank"
+      rel="noopener"
+    >
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path
+          d="M16.001 2.667c-7.36 0-13.335 5.974-13.335 13.333 0 2.347.617 4.643 1.788 6.668L2.667 29.333l6.791-1.784a13.272 13.272 0 006.543 1.7h.005c7.356 0 13.333-5.974 13.333-13.333s-5.977-13.333-13.338-13.333zm0 24.231h-.004a11.02 11.02 0 01-5.615-1.538l-.403-.239-4.169 1.095 1.113-4.064-.262-.417a11.025 11.025 0 01-1.69-5.869c0-6.104 4.968-11.071 11.076-11.071 2.957 0 5.732 1.153 7.822 3.245a10.973 10.973 0 013.239 7.826c-.002 6.105-4.969 11.072-11.107 11.072zm6.074-8.279c-.332-.166-1.963-.969-2.268-1.079-.305-.111-.527-.166-.749.166-.221.332-.859 1.079-1.053 1.301-.194.222-.388.249-.719.083-.332-.166-1.401-.516-2.668-1.645-.985-.878-1.649-1.961-1.843-2.293-.194-.332-.021-.511.145-.676.149-.149.332-.388.498-.582.166-.194.221-.332.332-.554.111-.222.055-.416-.028-.582-.083-.166-.749-1.806-1.026-2.473-.271-.649-.546-.561-.749-.571l-.638-.011c-.222 0-.582.083-.886.416-.305.332-1.164 1.137-1.164 2.776 0 1.639 1.193 3.222 1.359 3.444.166.222 2.346 3.581 5.682 5.021.794.343 1.413.547 1.896.7.797.253 1.523.217 2.095.132.639-.095 1.963-.802 2.24-1.576.277-.774.277-1.438.194-1.576-.083-.138-.305-.222-.637-.388z"
+        />
+      </svg>
+    </a>
 
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuBtn.classList.toggle('open');
-    document.body.style.overflow = open ? 'hidden' : '';
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuBtn.classList.remove('open');
-    document.body.style.overflow = '';
-    menuBtn.setAttribute('aria-expanded', false);
-  }));
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="name">Sri Siddhi Ladies Tailoring</span>
+            <p>
+              Bespoke stitching, alterations and bridal wear — cut and finished
+              by hand in Vijayawada, serving Andhra Pradesh &amp; Telangana.
+            </p>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="Homepage.html#about">About Us</a></li>
+              <li><a href="Homepage.html#services">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="Homepage.html#testimonials">Reviews</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>+91 98765 43210</li>
+              <li>hello@srisiddhitailoring.in</li>
+              <li>Governorpet, Vijayawada</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span id="yr"></span> Sri Siddhi Ladies Tailoring. All rights
+            reserved.</span
+          >
+          <span>Crafted with care, one stitch at a time.</span>
+        </div>
+      </div>
+    </footer>
 
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 12);
-  });
+    <script>
+      document.getElementById("yr").textContent = new Date().getFullYear();
+      const WHATSAPP_NUMBER = "919876543210";
 
-  document.getElementById('waFloat').href =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Sri Siddhi Ladies Tailoring, I'd like to know more about your services.")}`;
+      const menuBtn = document.getElementById("menuBtn");
+      const navLinks = document.getElementById("navLinks");
+      menuBtn.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuBtn.classList.toggle("open");
+        document.body.style.overflow = open ? "hidden" : "";
+        menuBtn.setAttribute("aria-expanded", open);
+      });
+      navLinks.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuBtn.classList.remove("open");
+          document.body.style.overflow = "";
+          menuBtn.setAttribute("aria-expanded", false);
+        }),
+      );
 
-  // ==========================================
-  // LOAD MORE FUNCTIONALITY
-  // ==========================================
-  const masonryGrid = document.getElementById('masonryGrid');
-  const masonryItems = document.querySelectorAll('.masonry-item');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  const itemsPerPage = 8; // Number of images to show per click
-  let currentlyVisible = 0;
+      const header = document.getElementById("siteHeader");
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 12);
+      });
 
-  function showNextItems() {
-    const totalItems = masonryItems.length;
-    const nextLimit = Math.min(currentlyVisible + itemsPerPage, totalItems);
-    
-    for (let i = currentlyVisible; i < nextLimit; i++) {
-      masonryItems[i].style.display = 'block';
-    }
-    
-    currentlyVisible = nextLimit;
+      document.getElementById("waFloat").href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Sri Siddhi Ladies Tailoring, I'd like to know more about your services.")}`;
 
-    // Hide the button if all items are visible
-    if (currentlyVisible >= totalItems) {
-      loadMoreBtn.style.display = 'none';
-    }
-  }
+      // ==========================================
+      // LOAD MORE FUNCTIONALITY
+      // ==========================================
+      const masonryGrid = document.getElementById("masonryGrid");
+      const masonryItems = document.querySelectorAll(".masonry-item");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const itemsPerPage = 8; // Number of images to show per click
+      let currentlyVisible = 0;
 
-  // Initialize the first 8 items on page load
-  showNextItems();
+      function showNextItems() {
+        const totalItems = masonryItems.length;
+        const nextLimit = Math.min(currentlyVisible + itemsPerPage, totalItems);
 
-  // Add click event to the Load More button
-  loadMoreBtn.addEventListener('click', showNextItems);
+        for (let i = currentlyVisible; i < nextLimit; i++) {
+          masonryItems[i].style.display = "block";
+        }
 
-  // ==========================================
-  // LIGHTBOX ZOOM & DOWNLOAD FUNCTIONALITY
-  // ==========================================
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const downloadLink = document.getElementById('downloadLink');
-  const lightboxClose = document.getElementById('lightboxClose');
+        currentlyVisible = nextLimit;
 
-  // Event delegation: listens for clicks on the grid, finds the image, and opens lightbox
-  masonryGrid.addEventListener('click', function(e) {
-    const img = e.target.closest('.masonry-item img');
-    if (img) {
-      const imgSrc = img.src;
-      lightboxImg.src = imgSrc;
-      
-      // Set download link to the image source
-      downloadLink.href = imgSrc;
-      
-      // Try to extract the filename for the download attribute
-      const fileName = imgSrc.split('/').pop();
-      downloadLink.setAttribute('download', fileName);
-      
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
-  });
+        // Hide the button if all items are visible
+        if (currentlyVisible >= totalItems) {
+          loadMoreBtn.style.display = "none";
+        }
+      }
 
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scrolling
-  }
+      // Initialize the first 8 items on page load
+      showNextItems();
 
-  // Close button click
-  lightboxClose.addEventListener('click', closeLightbox);
+      // Add click event to the Load More button
+      loadMoreBtn.addEventListener("click", showNextItems);
 
-  // Click outside the image to close
-  lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
+      // ==========================================
+      // LIGHTBOX ZOOM & DOWNLOAD FUNCTIONALITY
+      // ==========================================
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const downloadLink = document.getElementById("downloadLink");
+      const lightboxClose = document.getElementById("lightboxClose");
 
-  // Close on ESC key press (for desktop users)
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
-</script>
-</body>
+      // Event delegation: listens for clicks on the grid, finds the image, and opens lightbox
+      masonryGrid.addEventListener("click", function (e) {
+        const img = e.target.closest(".masonry-item img");
+        if (img) {
+          const imgSrc = img.src;
+          lightboxImg.src = imgSrc;
+
+          // Set download link to the image source
+          downloadLink.href = imgSrc;
+
+          // Try to extract the filename for the download attribute
+          const fileName = imgSrc.split("/").pop();
+          downloadLink.setAttribute("download", fileName);
+
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+
+      // Close button click
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      // Click outside the image to close
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on ESC key press (for desktop users)
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lightbox.classList.contains("active")) {
+          closeLightbox();
+        }
+      });
+    </script>
+  </body>
 </html>
