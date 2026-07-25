@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Sri Siddhi Ladies Tailoring | Custom Stitching &amp; Bridal Wear
-    </title>
+    <title>Gallery | Sri Siddhi Ladies Tailoring</title>
     <meta
       name="description"
-      content="Sri Siddhi Ladies Tailoring — bespoke blouse stitching, bridal wear, alterations and embroidery in Andhra Pradesh &amp; Telangana."
+      content="A full gallery of our bespoke tailoring, bridal wear, and custom embroidery work."
     />
     <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +28,6 @@
         --ink-soft: #5c4f45;
         --blush: #f2d9c4;
         --white: #ffffff;
-        --radius: 2px;
         --shadow: 0 12px 40px -12px rgba(122, 24, 54, 0.18);
       }
 
@@ -82,10 +79,6 @@
         border: none;
         background: none;
       }
-      :focus-visible {
-        outline: 2px solid var(--teal);
-        outline-offset: 3px;
-      }
 
       .wrap {
         max-width: 1180px;
@@ -101,19 +94,7 @@
         font-weight: 600;
       }
 
-      /* ---------- Thread-stitch divider ---------- */
-      .stitch-divider {
-        width: 100%;
-        height: 34px;
-        display: block;
-      }
-      .stitch-divider svg {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
-      /* ---------- Header ---------- */
+      /* Header */
       header {
         position: fixed;
         top: 0;
@@ -196,7 +177,6 @@
         width: 100%;
       }
 
-      /* Desktop CTA Button */
       .nav-cta {
         display: inline-flex;
         align-items: center;
@@ -246,102 +226,64 @@
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      /* ---------- Hero ---------- */
-      .hero {
-        position: relative;
-        padding: 168px 0 110px;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            ellipse 60% 50% at 85% 8%,
-            rgba(199, 154, 62, 0.16),
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 55% 45% at 8% 95%,
-            rgba(30, 92, 78, 0.12),
-            transparent 60%
-          ),
-          var(--ivory);
-      }
-
-      .hero-drape,
-      .hero-drape-gold {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        z-index: 1;
-      }
-      .hero-drape {
-        width: 55%;
-      }
-      .hero-drape-gold {
-        width: 35%;
-        height: 85%;
-        top: 5%;
-        right: 5%;
-        filter: drop-shadow(-10px 0 24px rgba(122, 24, 54, 0.25));
-      }
-
-      .hero-inner {
-        position: relative;
-        z-index: 2;
-        max-width: 820px;
-        margin: 0 auto;
-        padding: 0 28px;
+      /* Gallery Page Specifics */
+      .page-header {
+        padding: 160px 0 60px;
         text-align: center;
+        background: var(--white);
+        border-bottom: 1px solid rgba(122, 24, 54, 0.08);
       }
-      .hero-copy .eyebrow {
-        margin-bottom: 18px;
-        display: inline-block;
+      .page-header h1 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        margin-top: 12px;
       }
-      .hero h1 {
-        font-size: clamp(2.6rem, 5.2vw, 4.4rem);
-        line-height: 1.04;
-        color: var(--maroon-deep);
-        margin: 0 auto;
-        max-width: 14ch;
-      }
-      .hero h1 em {
-        font-style: italic;
-        color: var(--teal);
-        display: block;
-      }
-      .hero-sub {
-        margin-top: 22px;
-        font-size: 1.05rem;
+      .page-header p {
+        margin-top: 14px;
         color: var(--ink-soft);
-        max-width: 56ch;
+        max-width: 600px;
         margin-left: auto;
         margin-right: auto;
       }
-      .hero-actions {
+
+      /* Masonry Grid Layout */
+      .masonry-section {
+        padding: 64px 0;
+        background: var(--ivory);
+      }
+      .masonry-grid {
+        column-count: 4;
+        column-gap: 16px;
+      }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px -10px rgba(42, 33, 28, 0.15);
+        position: relative;
+        background: var(--ivory-deep);
+        display: none; /* Hidden by default for Load More functionality */
+      }
+      .masonry-item img {
+        width: 100%;
+        display: block;
+        transition: transform 0.4s ease;
+        cursor: pointer; /* Lets users know they can click */
+      }
+      .masonry-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Centering container for buttons */
+      .gallery-actions {
+        text-align: center;
+        margin-top: 48px;
         display: flex;
-        gap: 16px;
-        margin-top: 36px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .btn-primary {
-        background: var(--maroon);
-        color: var(--ivory);
-        padding: 15px 30px;
-        border-radius: 30px;
-        font-weight: 600;
-        font-size: 0.92rem;
-        display: inline-flex;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
-        box-shadow: 0 10px 26px -8px rgba(122, 24, 54, 0.55);
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
+        gap: 24px;
       }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 30px -8px rgba(122, 24, 54, 0.6);
-      }
+
       .btn-secondary {
         border: 1.5px solid var(--maroon-deep);
         color: var(--maroon-deep);
@@ -361,432 +303,71 @@
         color: var(--ivory);
       }
 
-      .hero-stats {
-        display: flex;
-        gap: 34px;
-        margin-top: 52px;
-        flex-wrap: wrap;
+      /* ==========================================
+     LIGHTBOX / ZOOM VIEW STYLES
+     ========================================== */
+      .lightbox-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.92);
+        z-index: 2000; /* Sits above the header and whatsapp button */
+        display: none; /* Hidden by default */
+        align-items: center;
         justify-content: center;
-      }
-      .hero-stats div {
-        border-left: 2px solid var(--gold);
-        padding-left: 14px;
-        text-align: left;
-      }
-      .hero-stats .num {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.9rem;
-        font-weight: 700;
-        color: var(--maroon-deep);
-        display: block;
-      }
-      .hero-stats .lbl {
-        font-size: 0.74rem;
-        color: var(--ink-soft);
-        letter-spacing: 0.03em;
-      }
-
-      /* ---------- Section shells ---------- */
-      section {
-        padding: 96px 0;
-        position: relative;
-      }
-      .section-head {
-        max-width: 640px;
-        margin: 0 auto 56px;
-        text-align: center;
-      }
-      .section-head .eyebrow {
-        display: block;
-        margin-bottom: 12px;
-      }
-      .section-head h2 {
-        font-size: clamp(2rem, 3.6vw, 2.9rem);
-      }
-      .section-head p {
-        margin-top: 16px;
-        color: var(--ink-soft);
-        font-size: 1rem;
-      }
-
-      .reveal {
+        flex-direction: column;
+        padding: 20px;
         opacity: 0;
-        transform: translateY(26px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
+        transition: opacity 0.3s ease;
       }
-      .reveal.in {
+      .lightbox-overlay.active {
+        display: flex;
         opacity: 1;
-        transform: translateY(0);
       }
-
-      /* ---------- About ---------- */
-      .about {
-        background: var(--white);
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 64px;
-        align-items: center;
-      }
-      .about-visual {
-        position: relative;
-      }
-      .about-frame {
-        aspect-ratio: 4/5;
-        border-radius: 6px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .about-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .about-copy h2 {
-        font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-        margin-bottom: 20px;
-      }
-      .about-copy p {
-        color: var(--ink-soft);
-        margin-bottom: 16px;
-      }
-      .about-points {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-      .about-points li {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        font-size: 0.92rem;
-        color: var(--ink);
-      }
-      .about-points svg {
-        width: 18px;
-        height: 18px;
-        color: var(--teal);
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      /* ---------- Services ---------- */
-      .services {
-        background: var(--ivory);
-      }
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-      .service-card {
-        background: var(--white);
-        border-radius: 6px;
-        padding: 32px 26px;
-        border: 1px solid rgba(122, 24, 54, 0.08);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease,
-          border-color 0.3s ease;
-        position: relative;
-      }
-      .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow);
-        border-color: rgba(199, 154, 62, 0.4);
-      }
-      .service-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background: var(--blush);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
-      .service-icon svg {
-        width: 26px;
-        height: 26px;
-        color: var(--maroon);
-      }
-      .service-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-      }
-      .service-card p {
-        font-size: 0.88rem;
-        color: var(--ink-soft);
-      }
-      .service-card .price {
-        display: inline-block;
-        margin-top: 14px;
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: var(--teal);
-        letter-spacing: 0.02em;
-      }
-
-      /* ---------- Process ---------- */
-      .process {
-        background: var(--maroon-deep);
-        color: var(--ivory);
-      }
-      .process .section-head h2,
-      .process .section-head p {
-        color: var(--ivory);
-      }
-      .process .section-head p {
-        color: rgba(251, 246, 237, 0.75);
-      }
-      .process .eyebrow {
-        color: var(--gold-light);
-      }
-      .process-track {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        position: relative;
-      }
-      .process-track::before {
-        content: "";
+      .lightbox-close {
         position: absolute;
-        top: 26px;
-        left: 10%;
-        right: 10%;
-        height: 1px;
-        background: repeating-linear-gradient(
-          90deg,
-          var(--gold) 0 10px,
-          transparent 10px 18px
-        );
-        z-index: 0;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: 300;
+        cursor: pointer;
+        z-index: 2001;
+        line-height: 1;
+        transition: transform 0.2s;
       }
-      .process-step {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-      }
-      .process-num {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: var(--gold);
-        color: var(--maroon-deep);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 18px;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 700;
-        font-size: 1.3rem;
-        border: 4px solid var(--maroon-deep);
-      }
-      .process-step h4 {
-        color: var(--ivory);
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-      }
-      .process-step p {
-        font-size: 0.82rem;
-        color: rgba(251, 246, 237, 0.7);
+      .lightbox-close:hover {
+        transform: rotate(90deg);
       }
 
-      /* ---------- Gallery ---------- */
-      .gallery {
-        background: var(--white);
-      }
-      /* Uniform Grid Layout to fix alignment issues */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(
-          3,
-          1fr
-        ); /* 3 columns for perfect alignment */
-        gap: 24px;
-      }
-      .g-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 6px;
-        aspect-ratio: 4/5; /* Forces all image boxes to be the exact same size */
-        background: var(--ivory-deep);
-        box-shadow: 0 8px 20px -10px rgba(42, 33, 28, 0.15);
-      }
-      .g-item img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crops images perfectly to fit the uniform box */
-        display: block;
-        transition: transform 0.4s ease;
-      }
-      .g-item:hover img {
-        transform: scale(1.05);
-      }
-      .g-item span {
-        position: absolute;
-        bottom: 16px;
-        left: 16px;
-        color: var(--ivory);
-        font-size: 0.82rem;
-        font-weight: 600;
-        z-index: 2;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-      }
-      .g-item::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), transparent 50%);
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      .gallery-cta {
-        text-align: center;
-        margin-top: 48px;
-      }
-
-      /* ---------- Testimonials ---------- */
-      .testimonials {
-        background: var(--ivory-deep);
-      }
-      .t-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-      .t-card {
-        background: var(--white);
-        border-radius: 6px;
-        padding: 30px 26px;
-        border-top: 3px solid var(--gold);
-        box-shadow: 0 8px 24px -12px rgba(42, 33, 28, 0.15);
-      }
-      .t-stars {
-        color: var(--gold);
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        margin-bottom: 14px;
-      }
-      .t-card p {
-        font-size: 0.92rem;
-        color: var(--ink);
-        font-style: italic;
-        margin-bottom: 18px;
-      }
-      .t-name {
-        font-weight: 600;
-        font-size: 0.88rem;
-        color: var(--maroon-deep);
-      }
-      .t-loc {
-        font-size: 0.76rem;
-        color: var(--ink-soft);
-      }
-
-      /* ---------- Contact ---------- */
-      .contact {
-        background: var(--white);
-      }
-      .contact-grid {
-        max-width: 680px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .contact-info h2 {
-        font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-        margin-bottom: 18px;
-      }
-      .contact-info > p {
-        color: var(--ink-soft);
-        margin-bottom: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 50ch;
-      }
-      .info-row {
+      .lightbox-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 6px;
-        margin-bottom: 32px;
+        max-width: 100%;
+        max-height: 100%;
       }
-      .info-row .ic {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--blush);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-bottom: 4px;
+      .lightbox-content img {
+        max-width: 90vw;
+        max-height: 70vh; /* Keeps image within view so buttons are accessible */
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
-      .info-row .ic svg {
-        width: 20px;
-        height: 20px;
-        color: var(--maroon);
+      .lightbox-download {
+        margin-top: 20px;
+        background: var(--maroon-deep);
+        color: var(--ivory);
+        border-color: var(--maroon-deep);
       }
-      .info-row b {
-        display: block;
-        font-size: 0.95rem;
-        color: var(--ink);
-      }
-      .info-row span {
-        font-size: 0.86rem;
-        color: var(--ink-soft);
+      .lightbox-download:hover {
+        background: var(--maroon);
+        color: var(--ivory);
       }
 
-      /* WhatsApp float button */
-      .wa-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 900;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #25d366;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 20px -6px rgba(37, 211, 102, 0.6);
-        animation: pulse 2.4s infinite;
-      }
-      .wa-float svg {
-        width: 28px;
-        height: 28px;
-        color: #fff;
-      }
-      @keyframes pulse {
-        0% {
-          box-shadow:
-            0 8px 20px -6px rgba(37, 211, 102, 0.6),
-            0 0 0 0 rgba(37, 211, 102, 0.5);
-        }
-        70% {
-          box-shadow:
-            0 8px 20px -6px rgba(37, 211, 102, 0.6),
-            0 0 0 12px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow:
-            0 8px 20px -6px rgba(37, 211, 102, 0.6),
-            0 0 0 0 rgba(37, 211, 102, 0);
-        }
-      }
-
-      /* ---------- Footer ---------- */
+      /* Footer */
       footer {
         background: var(--ink);
         color: rgba(251, 246, 237, 0.75);
@@ -837,7 +418,46 @@
         color: rgba(251, 246, 237, 0.5);
       }
 
-      /* ---------- Responsive Nav ---------- */
+      /* WhatsApp float button */
+      .wa-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 900;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px -6px rgba(37, 211, 102, 0.6);
+        animation: pulse 2.4s infinite;
+      }
+      .wa-float svg {
+        width: 28px;
+        height: 28px;
+        color: #fff;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 0 rgba(37, 211, 102, 0.5);
+        }
+        70% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 12px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow:
+            0 8px 20px -6px rgba(37, 211, 102, 0.6),
+            0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Responsive Nav */
       @media (max-width: 1024px) {
         .menu-btn {
           display: flex;
@@ -886,54 +506,16 @@
         }
       }
 
-      /* ---------- Responsive Sections ---------- */
-      @media (max-width: 960px) {
-        .hero-drape,
-        .hero-drape-gold {
-          display: none;
-        }
-        .about-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .service-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .process-track {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 34px;
-        }
-        .process-track::before {
-          display: none;
-        }
-        .gallery-grid {
-          grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-        }
-        .t-grid {
-          grid-template-columns: 1fr;
-          max-width: 500px;
-          margin: 0 auto;
-        }
-        .about-points {
-          grid-template-columns: 1fr;
+      /* Responsive Gallery Layout */
+      @media (max-width: 1024px) {
+        .masonry-grid {
+          column-count: 3;
         }
       }
-
       @media (max-width: 768px) {
-        section {
-          padding: 64px 0;
+        .masonry-grid {
+          column-count: 2;
         }
-        .hero {
-          padding: 130px 0 64px;
-        }
-        .section-head {
-          margin-bottom: 40px;
-        }
-        .about-visual {
-          max-width: 340px;
-          margin: 0 auto;
-        }
-
         .footer-grid {
           grid-template-columns: 1fr;
           gap: 32px;
@@ -951,43 +533,19 @@
           text-align: center;
         }
       }
-
-      @media (max-width: 560px) {
-        .service-grid {
-          grid-template-columns: 1fr;
+      @media (max-width: 480px) {
+        .masonry-grid {
+          column-count: 1;
         }
-        .process-track {
-          grid-template-columns: 1fr;
+        /* Mobile tweaks for lightbox */
+        .lightbox-close {
+          top: 10px;
+          right: 15px;
+          font-size: 32px;
         }
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-        .hero-stats {
-          flex-direction: column;
-          gap: 16px;
-          width: 100%;
-        }
-        .hero-stats div {
-          border-left: none;
-          border-top: 2px solid var(--gold);
-          padding: 8px 0 0;
-          width: 100%;
-          max-width: 240px;
-          text-align: center;
-          margin: 0 auto;
-        }
-        .gallery-grid {
-          grid-template-columns: 1fr; /* 1 column on small phones */
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.001s !important;
-          transition-duration: 0.001s !important;
-        }
-        html {
-          scroll-behavior: auto;
+        .lightbox-content img {
+          max-width: 95vw;
+          max-height: 65vh;
         }
       }
     </style>
@@ -997,7 +555,7 @@
     <header id="siteHeader">
       <nav class="nav">
         <a href="index.html" class="brand">
-          <!-- Replaced SS mark with the provided Ganesha image -->
+          <!-- Ganesha Logo Image -->
           <img
             src="images/ganesh.png"
             alt="Sri Siddhi Logo"
@@ -1011,7 +569,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="index.html#testimonials">Reviews</a></li>
           <li>
             <a href="index.html#contact" class="nav-cta">Book a Fitting</a>
@@ -1028,379 +586,146 @@
       </nav>
     </header>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="top">
-      <svg
-        class="hero-drape"
-        viewBox="0 0 100 130"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id="drapeGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#7A1836" />
-            <stop offset="45%" stop-color="#5A1128" />
-            <stop offset="70%" stop-color="#8f2140" />
-            <stop offset="100%" stop-color="#C79A3E" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M40,0 L100,0 L100,130 L65,130 C50,100 50,70 60,40 C65,25 50,10 40,0 Z"
-          fill="url(#drapeGrad)"
-        />
-      </svg>
-      <svg
-        class="hero-drape-gold"
-        viewBox="0 0 100 130"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <defs>
-          <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#E4C878" />
-            <stop offset="60%" stop-color="#C79A3E" />
-            <stop offset="100%" stop-color="#a97e2c" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M25,0 L100,0 L100,130 L70,130 C30,90 30,50 50,10 L25,0 Z"
-          fill="url(#goldGrad)"
-        />
-      </svg>
-
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Every stitch, cut &amp; fall — <em>tailored to you.</em></h1>
-          <p class="hero-sub">
-            From bridal silks to everyday blouses, Sri Siddhi Ladies Tailoring
-            blends traditional hand-finishing with a perfect, made-for-you fit.
-            Walk in with fabric, walk out with confidence.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn-primary">
-              Book a Fitting
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                width="16"
-                height="16"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 12h14M13 6l6 6-6 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-            <a href="#services" class="btn-secondary">Explore Services</a>
-          </div>
-          <div class="hero-stats">
-            <div>
-              <span class="num">12+</span
-              ><span class="lbl">Years of Craft</span>
-            </div>
-            <div>
-              <span class="num">10,000+</span
-              ><span class="lbl">Garments Stitched</span>
-            </div>
-            <div>
-              <span class="num">48 hr</span
-              ><span class="lbl">Express Turnaround</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stitch-divider" aria-hidden="true">
-      <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
-        <path
-          d="M0 17 Q 30 2, 60 17 T 120 17 T 180 17 T 240 17 T 300 17 T 360 17 T 420 17 T 480 17 T 540 17 T 600 17 T 660 17 T 720 17 T 780 17 T 840 17 T 900 17 T 960 17 T 1020 17 T 1080 17 T 1140 17 T 1200 17"
-          fill="none"
-          stroke="#C79A3E"
-          stroke-width="2"
-          stroke-dasharray="1 11"
-          stroke-linecap="round"
-        />
-      </svg>
-    </div>
-
-    <!-- ================= ABOUT ================= -->
-    <section class="about" id="about">
-      <div class="wrap about-grid">
-        <div class="about-visual reveal">
-          <div class="about-frame">
-            <img
-              src="images/WhatsApp Image 2026-07-24 at 14.41.19.jpeg"
-              alt="Sri Siddhi Ladies Tailoring studio"
-              class="about-img"
-            />
-          </div>
-        </div>
-        <div class="about-copy reveal">
-          <span class="eyebrow">Our Story</span>
-          <h2>A family craft, stitched with patience.</h2>
-          <p>
-            Sri Siddhi Ladies Tailoring began as a single sewing machine in a
-            family home — and grew, one perfectly fitted blouse at a time, into
-            a trusted studio for brides, working women and families across the
-            region.
-          </p>
-          <p>
-            We measure twice, cut once, and finish every hem by hand. No two
-            bodies are the same, so no two garments leave our studio identical.
-          </p>
-          <ul class="about-points">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M5 13l4 4L19 7"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Hand-finished seams &amp; hems
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M5 13l4 4L19 7"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Bridal trial fittings included
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M5 13l4 4L19 7"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Fabric sourcing guidance
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SERVICES ================= -->
-    <section class="services" id="services">
+    <!-- ================= PAGE HEADER ================= -->
+    <section class="page-header">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">What We Stitch</span>
-          <h2>Tailoring for every occasion</h2>
-          <p>
-            From daily-wear blouses to elaborate bridal ensembles — each order
-            is cut to your exact measurements and finished by hand.
-          </p>
-        </div>
-        <div class="service-grid">
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M8 3L5 5V8L7 9V21H17V9L19 8V5L16 3L14 5H10L8 3Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <h3>Blouse Stitching</h3>
-            <p>
-              Custom blouses in boat neck, halter, backless &amp; princess-cut
-              styles, fitted to perfection.
-            </p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M4 4C8 8 16 8 20 4C19 8 19 14 20 20C16 16 8 16 4 20C5 14 5 8 4 4Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <h3>Saree Fall &amp; Pico</h3>
-            <p>
-              Same-day fall stitching and pico edging so your saree drapes and
-              sits exactly right.
-            </p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M9 2H15L13 6H11L9 2Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 6H16L20 22H4L8 6Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 12C10 14 14 14 16 12"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <h3>Bridal &amp; Wedding Wear</h3>
-            <p>
-              Full bridal ensembles with hand embroidery, dupatta setting, and
-              multiple trial fittings.
-            </p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle
-                  cx="6"
-                  cy="6"
-                  r="3"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="6"
-                  cy="18"
-                  r="3"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M8.5 7.5L20 18M8.5 16.5L20 6M20 6L18 4M20 18L18 20"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <h3>Alterations &amp; Refitting</h3>
-            <p>
-              Resizing, waist adjustment and repair work on ready-mades and
-              heirloom garments alike.
-            </p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M9 3L8 5L10 7V11L8 21H16L14 11V7L16 5L15 3H9Z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <h3>Kids &amp; Pattu Wear</h3>
-            <p>
-              Pattu langa-voni, frocks and festive wear for little ones, sized
-              for growing room.
-            </p>
-          </div>
-          <div class="service-card reveal">
-            <div class="service-icon">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="8"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M12 4V2M12 22V20M4 12H2M22 12H20"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <h3>Aari, Hand &amp; Computer Embroidery</h3>
-            <p>
-              Bead, zardozi and thread embroidery worked by hand for a couture
-              finish. Computer Embroidery is also available.
-            </p>
-          </div>
-        </div>
+        <span class="eyebrow">Gallery</span>
+        <h1>Our Work in Detail</h1>
+        <p>
+          A complete look at the blouses, bridal wear, and custom embroidery
+          crafted by hand at Sri Siddhi Ladies Tailoring.
+        </p>
       </div>
     </section>
 
-    <!-- ================= GALLERY ================= -->
-    <section class="gallery" id="gallery">
+    <!-- ================= MASONRY GALLERY ================= -->
+    <section class="masonry-section">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Our Work</span>
-          <h2>A glimpse of our work</h2>
-          <p>
-            A few favourites from recent bridal, festive and everyday orders.
-          </p>
+        <div class="masonry-grid" id="masonryGrid">
+          <div class="masonry-item">
+            <img src="images/1.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/2.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/3.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/4.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/5.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/6.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/7.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/8.png" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/9.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/10.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/11.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/12.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/13.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/14.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/15.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/16.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/17.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/18.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/19.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/20.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/21.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/22.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/24.jpg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/25.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/26.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/27.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/28.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/29.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/30.jpeg" alt="Bridal Silk Blouse" />
+          </div>
+          <div class="masonry-item">
+            <img src="images/31.jpeg" alt="Bridal Silk Blouse" />
+          </div>
         </div>
-        <div class="gallery-grid">
-          <div class="g-item reveal">
-            <img src="images/bridal.jpeg" alt="Bridal Silk Blouse" />
-            <span>Bridal Silk Blouse</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/jari.jpeg" alt="Zari Border Saree Fall" />
-            <span>Zari Border Saree Fall</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/pattu.jpeg" alt="Pattu Langa Voni" />
-            <span>Pattu Langa Voni</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/boat.jpeg" alt="Boat Neck Blouse" />
-            <span>Boat Neck Blouse</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/lehenga.jpeg" alt="Reception Lehenga" />
-            <span>Reception Lehenga</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/chudidhar.jpeg" alt="Everyday Chudidhar Set" />
-            <span>Everyday Chudidhar Set</span>
-          </div>
-          <div class="g-item reveal">
-            <img src="images/computer.jpeg" alt="Computer Embroidery" />
-            <span>Computer Embroidery</span>
-          </div>
-        </div>
-        <div class="gallery-cta">
-          <a href="gallery.html" class="btn-secondary">
-            View All Gallery
+
+        <div class="gallery-actions">
+          <!-- Load More Button -->
+          <button id="loadMoreBtn" class="btn-secondary">
+            Load More
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              width="16"
+              height="16"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 5v14M6 13l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <!-- Main CTA Button -->
+          <a
+            href="index.html#contact"
+            class="btn-secondary"
+            style="
+              background: var(--maroon-deep);
+              color: var(--ivory);
+              border-color: var(--maroon-deep);
+            "
+          >
+            Book Your Fitting
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -1421,133 +746,30 @@
       </div>
     </section>
 
-    <!-- ================= TESTIMONIALS ================= -->
-    <section class="testimonials" id="testimonials">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Kind Words</span>
-          <h2>What our customers say</h2>
-        </div>
-        <div class="t-grid">
-          <div class="t-card reveal">
-            <div class="t-stars">★★★★★</div>
-            <p>
-              "The fitting, finishing, and overall quality exceeded my
-              expectations. The tailor was patient, understood my preferences,
-              and completed the work on time."
-            </p>
-            <div class="t-name">Yamuna Janapareddy</div>
-          </div>
-          <div class="t-card reveal">
-            <div class="t-stars">★★★★★</div>
-            <p>
-              "Perfect stitching and timely delivery. I did not have to make any
-              alterations."
-            </p>
-            <div class="t-name">Archana Bhargavan</div>
-          </div>
-          <div class="t-card reveal">
-            <div class="t-stars">★★★★★</div>
-            <p>
-              "The blouse stitching was neat, fitting was perfect, and the
-              finishing looked very premium. Really loved the tailoring
-              quality."
-            </p>
-            <div class="t-name">Susmita</div>
-          </div>
-        </div>
+    <!-- ================= LIGHTBOX ZOOM VIEW ================= -->
+    <div id="lightbox" class="lightbox-overlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Zoomed Image" />
+        <a
+          id="downloadLink"
+          class="btn-secondary lightbox-download"
+          href="#"
+          download
+        >
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+            <path
+              d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Download Image
+        </a>
       </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div class="contact-info reveal">
-          <span class="eyebrow">Get In Touch</span>
-          <h2>Book your fitting</h2>
-          <p>
-            Reach out on WhatsApp using the button below or the floating icon,
-            and we'll message you back with an appointment slot.
-          </p>
-
-          <div class="info-row">
-            <div class="ic">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.3a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2.1z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <div><b>Call or WhatsApp</b><span>+91 8179047913</span></div>
-          </div>
-          <div class="info-row">
-            <div class="ic">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect
-                  x="3"
-                  y="5"
-                  width="18"
-                  height="14"
-                  rx="2"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-                <path
-                  d="M3 7l9 6 9-6"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-              </svg>
-            </div>
-            <div><b>Email</b><span>srisiddhitailoring@gmail.com</span></div>
-          </div>
-          <div class="info-row">
-            <div class="ic">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="M12 21s7-6.3 7-11.5A7 7 0 105 9.5C5 14.7 12 21 12 21z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-                <circle
-                  cx="12"
-                  cy="9.5"
-                  r="2.4"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-              </svg>
-            </div>
-            <div>
-              <b>Address</b><span>HUDA Layout, Nallagandla, Hyderabad</span>
-            </div>
-          </div>
-          <div class="info-row">
-            <div class="ic">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                />
-                <path
-                  d="M12 7v5l3.5 2"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-            <div><b>Working Hours</b><span>Mon–Sat, 8 AM – 9 PM</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- WhatsApp float button -->
     <a
@@ -1606,7 +828,7 @@
 
     <script>
       document.getElementById("yr").textContent = new Date().getFullYear();
-      const WHATSAPP_NUMBER = "918179047913";
+      const WHATSAPP_NUMBER = "919876543210";
 
       const menuBtn = document.getElementById("menuBtn");
       const navLinks = document.getElementById("navLinks");
@@ -1630,22 +852,88 @@
         header.classList.toggle("scrolled", window.scrollY > 12);
       });
 
-      const revealEls = document.querySelectorAll(".reveal");
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 },
-      );
-      revealEls.forEach((el) => io.observe(el));
-
       document.getElementById("waFloat").href =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Sri Siddhi Ladies Tailoring, I'd like to know more about your services.")}`;
+
+      // ==========================================
+      // LOAD MORE FUNCTIONALITY
+      // ==========================================
+      const masonryGrid = document.getElementById("masonryGrid");
+      const masonryItems = document.querySelectorAll(".masonry-item");
+      const loadMoreBtn = document.getElementById("loadMoreBtn");
+      const itemsPerPage = 8; // Number of images to show per click
+      let currentlyVisible = 0;
+
+      function showNextItems() {
+        const totalItems = masonryItems.length;
+        const nextLimit = Math.min(currentlyVisible + itemsPerPage, totalItems);
+
+        for (let i = currentlyVisible; i < nextLimit; i++) {
+          masonryItems[i].style.display = "block";
+        }
+
+        currentlyVisible = nextLimit;
+
+        // Hide the button if all items are visible
+        if (currentlyVisible >= totalItems) {
+          loadMoreBtn.style.display = "none";
+        }
+      }
+
+      // Initialize the first 8 items on page load
+      showNextItems();
+
+      // Add click event to the Load More button
+      loadMoreBtn.addEventListener("click", showNextItems);
+
+      // ==========================================
+      // LIGHTBOX ZOOM & DOWNLOAD FUNCTIONALITY
+      // ==========================================
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const downloadLink = document.getElementById("downloadLink");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      // Event delegation: listens for clicks on the grid, finds the image, and opens lightbox
+      masonryGrid.addEventListener("click", function (e) {
+        const img = e.target.closest(".masonry-item img");
+        if (img) {
+          const imgSrc = img.src;
+          lightboxImg.src = imgSrc;
+
+          // Set download link to the image source
+          downloadLink.href = imgSrc;
+
+          // Try to extract the filename for the download attribute
+          const fileName = imgSrc.split("/").pop();
+          downloadLink.setAttribute("download", fileName);
+
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+
+      // Close button click
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      // Click outside the image to close
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on ESC key press (for desktop users)
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lightbox.classList.contains("active")) {
+          closeLightbox();
+        }
+      });
     </script>
   </body>
 </html>
